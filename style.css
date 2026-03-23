@@ -376,7 +376,7 @@ body {
 }
 
 .credentials li:before {
-    content: "✓";
+    content: "âœ“";
     position: absolute;
     left: 0;
     color: var(--accent-orange);
