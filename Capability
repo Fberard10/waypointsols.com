@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capability Statement - Waypoint Solutions LLC</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── Capability page specific styles ── */
+  .cap-hero {
+    background: #0A1628;
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  .cap-hero h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    letter-spacing: 0.08em;
+    margin: 0 0 8px;
+  }
+  .cap-hero .gold-bar {
+    width: 60px;
+    height: 3px;
+    background: #F9A825;
+    margin: 16px auto;
+  }
+  .cap-hero p {
+    color: #90CAF9;
+    font-size: 1rem;
+    margin: 0;
+  }
+ 
+  .cap-section {
+    padding: 60px 0;
+  }
+  .cap-section.alt {
+    background: #f5f7fa;
+  }
+ 
+  .cap-intro {
+    max-width: 760px;
+    margin: 0 auto 48px;
+    text-align: center;
+    color: #37474F;
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+ 
+  /* Credentials bar */
+  .cred-bar {
+    background: #F9A825;
+    padding: 18px 0;
+  }
+  .cred-bar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+  .cred-item {
+    font-size: 0.88rem;
+    color: #0A1628;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .cred-item span {
+    font-weight: 400;
+  }
+ 
+  /* Capability cards */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .cap-card {
+    background: #ffffff;
+    border: 1px solid #e0e6ed;
+    border-top: 4px solid #1565C0;
+    border-radius: 6px;
+    padding: 28px 24px;
+  }
+  .cap-card h3 {
+    color: #0A1628;
+    font-size: 1rem;
+    margin: 0 0 16px;
+    letter-spacing: 0.02em;
+  }
+  .cap-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cap-card ul li {
+    color: #37474F;
+    font-size: 0.9rem;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.5;
+  }
+  .cap-card ul li:last-child { border-bottom: none; }
+  .cap-card ul li::before {
+    content: "›  ";
+    color: #1565C0;
+    font-weight: 700;
+  }
+ 
+  /* Past performance table */
+  .pp-table {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    border-collapse: collapse;
+  }
+  .pp-table thead tr {
+    background: #0A1628;
+    color: #ffffff;
+  }
+  .pp-table thead th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .pp-table tbody tr:nth-child(even) { background: #f0f4f8; }
+  .pp-table tbody tr:nth-child(odd)  { background: #ffffff; }
+  .pp-table tbody td {
+    padding: 14px 16px;
+    font-size: 0.88rem;
+    color: #37474F;
+    vertical-align: top;
+    border-bottom: 1px solid #e0e6ed;
+  }
+  .pp-table tbody td strong { color: #0A1628; }
+ 
+  /* Pillars */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .pillar {
+    background: #0A1628;
+    border-top: 4px solid #F9A825;
+    border-radius: 6px;
+    padding: 28px 24px;
+  }
+  .pillar h3 {
+    color: #F9A825;
+    font-size: 1rem;
+    margin: 0 0 12px;
+  }
+  .pillar p {
+    color: #B0BEC5;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    margin: 0;
+  }
+ 
+  /* NAICS table */
+  .naics-table {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px;
+    border-collapse: collapse;
+  }
+  .naics-table tr:nth-child(even) { background: #f0f4f8; }
+  .naics-table tr:nth-child(odd)  { background: #ffffff; }
+  .naics-table td {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    color: #37474F;
+    border-bottom: 1px solid #e0e6ed;
+  }
+  .naics-table td:first-child {
+    font-weight: 700;
+    color: #1565C0;
+    width: 100px;
+  }
+ 
+  /* Contact CTA */
+  .cap-cta {
+    background: #0A1628;
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .cap-cta h2 { color: #ffffff; margin: 0 0 12px; }
+  .cap-cta p  { color: #90CAF9; margin: 0 0 28px; }
+  .cap-cta a.cta-button {
+    background: #F9A825;
+    color: #0A1628;
+    padding: 14px 36px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: inline-block;
+  }
+  .cap-cta a.cta-button:hover { background: #e09318; }
+ 
+  .section-heading {
+    text-align: center;
+    color: #0A1628;
+    font-size: 1.6rem;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+  }
+  .gold-underline {
+    width: 48px;
+    height: 3px;
+    background: #F9A825;
+    margin: 0 auto 36px;
+  }
+ 
+  @media (max-width: 700px) {
+    .pp-table { font-size: 0.8rem; }
+    .pp-table thead th, .pp-table tbody td { padding: 10px 10px; }
+    .cap-hero h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+ 
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">WAYPOINT</a></div>
+    <ul class="nav-menu">
+      <li><a href="index.html#capabilities">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="capability.html" class="active">Capability Statement</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+ 
+<!-- Hero -->
+<div class="cap-hero">
+  <h1>CAPABILITY STATEMENT</h1>
+  <div class="gold-bar"></div>
+  <p>Waypoint Solutions LLC &nbsp;|&nbsp; Federal Government Supplier &nbsp;|&nbsp; Small Business</p>
+</div>
+ 
+<!-- Credentials Bar -->
+<div class="cred-bar">
+  <div class="cred-bar-inner">
+    <div class="cred-item">UEI: <span>RHPLYK8XN9L1</span></div>
+    <div class="cred-item">CAGE: <span>19DM6</span></div>
+    <div class="cred-item">SAM.gov: <span>Active</span></div>
+    <div class="cred-item">Entity Type: <span>LLC — U.S. Small Business</span></div>
+    <div class="cred-item">Primary NAICS: <span>238990</span></div>
+  </div>
+</div>
+ 
+<!-- Who We Are -->
+<section class="cap-section">
+  <div class="container">
+    <h2 class="section-heading">Who We Are</h2>
+    <div class="gold-underline"></div>
+    <p class="cap-intro">
+      Waypoint Solutions LLC is an Albuquerque-based U.S. small business built to serve federal agencies with construction services, industrial supplies, and facility support. We combine agile small business responsiveness with finance-educated leadership, compliance-ready operations, and a deep network of vetted subcontractors across New Mexico and the Southwest. Founded by Federico Berard and Braden Cote, Waypoint brings professional financial acumen and hands-on construction oversight to every contract we take on.
+    </p>
+  </div>
+</section>
+ 
+<!-- Core Capabilities -->
+<section class="cap-section alt">
+  <div class="container">
+    <h2 class="section-heading">Core Capabilities</h2>
+    <div class="gold-underline"></div>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <h3>Construction Services</h3>
+        <ul>
+          <li>Post and pole, chain link, wood &amp; wrought iron fencing</li>
+          <li>Federal land and National Forest construction</li>
+          <li>Site preparation, layout, and remediation</li>
+          <li>Environmentally sensitive / light-on-land site work</li>
+          <li>Full compliance with federal SOW requirements</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <h3>Industrial &amp; Facility Supplies</h3>
+        <ul>
+          <li>Heavy equipment and machinery parts sourcing</li>
+          <li>Industrial consumables and maintenance supplies</li>
+          <li>Janitorial and facility support for federal buildings</li>
+          <li>Rapid sourcing with verified supplier network</li>
+          <li>Quality assurance and delivery coordination</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <h3>Contract &amp; Project Management</h3>
+        <ul>
+          <li>Prime contractor — full accountability and compliance</li>
+          <li>Subcontractor sourcing, vetting, and field oversight</li>
+          <li>Active CO/COR liaison throughout performance</li>
+          <li>Davis-Bacon wage determination compliance</li>
+          <li>Federal documentation and reporting management</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <h3>Equipment Solutions</h3>
+        <ul>
+          <li>Heavy and light equipment procurement</li>
+          <li>Low-impact tracked equipment for sensitive sites</li>
+          <li>Equipment coordination for remote federal locations</li>
+          <li>Vendor partnerships across NM and the Southwest</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Past Performance -->
+<section class="cap-section">
+  <div class="container">
+    <h2 class="section-heading">Teaming Partner Past Performance</h2>
+    <div class="gold-underline"></div>
+    <p class="cap-intro" style="margin-bottom: 32px;">
+      The following projects were performed by All Terrain Fence LLC, Waypoint Solutions LLC's primary construction subcontractor and teaming partner — a licensed New Mexico fence contractor (License No. BR2021-162) based in Ruidoso Downs, NM.
+    </p>
+    <table class="pp-table">
+      <thead>
+        <tr>
+          <th>Project</th>
+          <th>Client</th>
+          <th>Scope</th>
+          <th>Value / Period</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Blue Lake Fence Reconstruction — Lincoln National Forest</strong></td>
+          <td>USDA Forest Service, Smokey Bear Ranger District</td>
+          <td>~2,150 LF post and pole fence, Blue Lake Wetland, Ruidoso, NM. Labor and equipment; government-furnished materials.</td>
+          <td><strong>$54,727.20</strong><br>Sol. 127EAX26Q0012 | 2026</td>
+        </tr>
+        <tr>
+          <td><strong>Lincoln County Fairgrounds — Chain Link Fence</strong></td>
+          <td>Renegade Construction LLC</td>
+          <td>~1,300 LF 6-ft DOT commercial chain link fencing; 3 double swing gates, 5 walk gates. Materials and labor.</td>
+          <td><strong>$76,088.15</strong><br>May–July 2023</td>
+        </tr>
+        <tr>
+          <td><strong>Oso LLC — Wood Post and Rail Fencing</strong></td>
+          <td>Oso LLC, NM</td>
+          <td>~370 LF 6-ft horizontal wood fencing, steel tube posts 3 ft deep; 3 double swing gates, 1 walk gate.</td>
+          <td><strong>$39,259.99</strong><br>April–May 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Residential — Black Wrought Iron Fencing</strong></td>
+          <td>Dean Fowler</td>
+          <td>~510 LF 5-ft black wrought iron fencing, coordinated with concurrent site improvements.</td>
+          <td><strong>$55,317.15</strong><br>Sept–Nov 2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+ 
+<!-- Why Waypoint -->
+<section class="cap-section alt">
+  <div class="container">
+    <h2 class="section-heading">Why Waypoint Solutions</h2>
+    <div class="gold-underline"></div>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <h3>Geographic Reach</h3>
+        <p>New Mexico-based headquarters with leadership spanning Albuquerque and Nashville — flexible capacity to support federal contracts across the country.</p>
+      </div>
+      <div class="pillar">
+        <h3>Compliance-Ready</h3>
+        <p>Active SAM.gov registration, CAGE code, Davis-Bacon compliant operations, and finance-educated leadership ensuring cost discipline and zero compliance surprises.</p>
+      </div>
+      <div class="pillar">
+        <h3>Agile &amp; Responsive</h3>
+        <p>Small business speed with the ability to mobilize quickly, adapt to site conditions, and maintain direct communication with COs and CORs from day one through final acceptance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- NAICS & Credentials -->
+<section class="cap-section">
+  <div class="container">
+    <h2 class="section-heading">NAICS Codes &amp; Credentials</h2>
+    <div class="gold-underline"></div>
+    <table class="naics-table">
+      <tr><td>238990</td><td>All Other Specialty Trade Contractors (Fencing &amp; Construction)</td></tr>
+      <tr><td>423840</td><td>Industrial Supplies Merchant Wholesalers</td></tr>
+      <tr><td>238910</td><td>Site Preparation Contractors</td></tr>
+      <tr><td>561720</td><td>Janitorial Services</td></tr>
+    </table>
+    <br><br>
+    <table class="naics-table">
+      <tr><td>Legal Name</td><td>Waypoint Solutions LLC</td></tr>
+      <tr><td>UEI</td><td>RHPLYK8XN9L1</td></tr>
+      <tr><td>CAGE Code</td><td>19DM6</td></tr>
+      <tr><td>SAM.gov</td><td>Active Registration</td></tr>
+      <tr><td>Business Size</td><td>Small Business — LLC</td></tr>
+      <tr><td>Address</td><td>5801 Lowell St 13C, Albuquerque, NM 87111</td></tr>
+    </table>
+  </div>
+</section>
+ 
+<!-- Contact CTA -->
+<div class="cap-cta">
+  <h2>Ready to Partner with Waypoint Solutions?</h2>
+  <p>Federal agencies, contracting officers, and potential teaming partners — we'd love to hear from you.</p>
+  <a href="index.html#contact" class="cta-button">Contact Us</a>
+</div>
+ 
+<!-- Contact Quick Info -->
+<section class="cap-section alt" style="padding: 40px 0;">
+  <div class="container" style="text-align: center;">
+    <p style="color:#37474F; font-size:0.95rem; margin:0;">
+      <strong>Federico Berard</strong> — 505-730-1274 &nbsp;|&nbsp;
+      <strong>Braden Cote</strong> — 505-410-0958 &nbsp;|&nbsp;
+      <a href="mailto:info@waypointsols.com">info@waypointsols.com</a> &nbsp;|&nbsp;
+      <a href="https://waypointsols.com">waypointsols.com</a>
+    </p>
+  </div>
+</section>
+ 
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Waypoint Solutions LLC. All rights reserved.</p>
+    <p class="footer-meta">Federal Government Supplier &nbsp;|&nbsp; Small Business &nbsp;|&nbsp; Construction &amp; Industrial Supplies</p>
+    <p class="footer-contact"><a href="mailto:info@waypointsols.com">info@waypointsols.com</a></p>
+  </div>
+</footer>
+ 
+</body>
+</html>
+ 
